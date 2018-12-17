@@ -3,6 +3,7 @@ package org.aydus.reactive.reactivelibrary.user.controller;
 import lombok.RequiredArgsConstructor;
 import org.aydus.reactive.reactivelibrary.user.model.User;
 import org.aydus.reactive.reactivelibrary.user.service.UserService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +27,7 @@ public class UserController {
     return userService.save(user);
   }
 
-  @GetMapping("users/deleteAll")
+  @DeleteMapping("users/deleteAll")
   public Mono<Void> deleteAll() {
     return userService.deleteAll();
   }
