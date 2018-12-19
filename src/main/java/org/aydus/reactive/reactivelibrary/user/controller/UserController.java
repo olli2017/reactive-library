@@ -28,6 +28,11 @@ public class UserController {
     return userService.save(user);
   }
 
+  @PostMapping("/users/register")
+  public Mono<User> register(@RequestBody User user) {
+    return userService.register(user);
+  }
+
   @GetMapping("/users/{username}")
   public Mono<User> get(@PathVariable() String username) {
     return userService.findByUsername(username);
