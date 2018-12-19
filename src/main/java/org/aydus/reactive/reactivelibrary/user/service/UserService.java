@@ -24,4 +24,8 @@ public class UserService {
   public Mono<Void> deleteAll() {
     return userRepository.deleteAll();
   }
+
+  public Mono<User> findByUsername(String username) {
+    return userRepository.findByUsername(username);
+  }
 }

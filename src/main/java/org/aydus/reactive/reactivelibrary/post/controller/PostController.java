@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RestController()
+@RestController
 @RequestMapping(value = "/posts")
 @RequiredArgsConstructor
 public class PostController {
@@ -26,17 +26,17 @@ public class PostController {
 
   @GetMapping("")
   public Flux<Post> all() {
-    return this.postRepository.findAll();
+    return postRepository.findAll();
   }
 
   @PostMapping("")
   public Mono<Post> create(@RequestBody Post post) {
-    return this.postRepository.save(post);
+    return postRepository.save(post);
   }
 
   @GetMapping("/{id}")
   public Mono<Post> get(@PathVariable("id") String id) {
-    return this.postRepository.findById(id);
+    return postRepository.findById(id);
   }
 
   @PutMapping("/{id}")
